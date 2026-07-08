@@ -1,0 +1,181 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-07-07T19:30:00.000Z",
+  "__export_source": "copilot",
+  "resources": [
+    {
+      "_id": "wrk_1",
+      "parentId": null,
+      "modified": 0,
+      "created": 0,
+      "name": "CRUD Produtos/Fornecedors",
+      "_type": "workspace"
+    },
+    {
+      "_id": "fld_produtos",
+      "parentId": "wrk_1",
+      "modified": 0,
+      "created": 0,
+      "name": "Produtos",
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_fornecedors",
+      "parentId": "wrk_1",
+      "modified": 0,
+      "created": 0,
+      "name": "Fornecedors",
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_associacoes",
+      "parentId": "wrk_1",
+      "modified": 0,
+      "created": 0,
+      "name": "Associações",
+      "_type": "request_group"
+    },
+
+    {
+      "_id": "req_prod_create",
+      "parentId": "fld_produtos",
+      "modified": 0,
+      "created": 0,
+      "url": "http://localhost:3000/produtos",
+      "name": "Criar Produto",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Teclado Mecânico\",\n  \"descricao\": \"Teclado com switches azuis\",\n  \"preco\": 350.00,\n  \"codigoBarras\": \"1112223334445\"\n}"
+      },
+      "_type": "request"
+    },
+    {
+      "_id": "req_prod_list",
+      "parentId": "fld_produtos",
+      "url": "http://localhost:3000/produtos",
+      "name": "Listar Produtos",
+      "method": "GET",
+      "_type": "request"
+    },
+    {
+      "_id": "req_prod_get",
+      "parentId": "fld_produtos",
+      "url": "http://localhost:3000/produtos/1",
+      "name": "Buscar Produto por ID",
+      "method": "GET",
+      "_type": "request"
+    },
+    {
+      "_id": "req_prod_update",
+      "parentId": "fld_produtos",
+      "url": "http://localhost:3000/produtos/1",
+      "name": "Atualizar Produto",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Teclado Mecânico RGB\",\n  \"descricao\": \"Teclado com iluminação RGB\",\n  \"preco\": 420.00,\n  \"codigoBarras\": \"1112223334445\"\n}"
+      },
+      "_type": "request"
+    },
+    {
+      "_id": "req_prod_delete",
+      "parentId": "fld_produtos",
+      "url": "http://localhost:3000/produtos/1",
+      "name": "Deletar Produto",
+      "method": "DELETE",
+      "_type": "request"
+    },
+
+    {
+      "_id": "req_forn_create",
+      "parentId": "fld_fornecedors",
+      "url": "http://localhost:3000/fornecedors",
+      "name": "Criar Fornecedor",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Kabum\",\n  \"cnpj\": \"22.333.444/0001-55\",\n  \"endereco\": \"Campinas - SP\",\n  \"contato\": \"suporte@kabum.com.br\"\n}"
+      },
+      "_type": "request"
+    },
+    {
+      "_id": "req_forn_list",
+      "parentId": "fld_fornecedors",
+      "url": "http://localhost:3000/fornecedors",
+      "name": "Listar Fornecedores",
+      "method": "GET",
+      "_type": "request"
+    },
+    {
+      "_id": "req_forn_get",
+      "parentId": "fld_fornecedors",
+      "url": "http://localhost:3000/fornecedors/1",
+      "name": "Buscar Fornecedor por ID",
+      "method": "GET",
+      "_type": "request"
+    },
+    {
+      "_id": "req_forn_update",
+      "parentId": "fld_fornecedors",
+      "url": "http://localhost:3000/fornecedors/1",
+      "name": "Atualizar Fornecedor",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Kabum Tecnologia\",\n  \"cnpj\": \"22.333.444/0001-55\",\n  \"endereco\": \"Campinas - SP\",\n  \"contato\": \"atendimento@kabum.com.br\"\n}"
+      },
+      "_type": "request"
+    },
+    {
+      "_id": "req_forn_delete",
+      "parentId": "fld_fornecedors",
+      "url": "http://localhost:3000/fornecedors/1",
+      "name": "Deletar Fornecedor",
+      "method": "DELETE",
+      "_type": "request"
+    },
+
+    {
+      "_id": "req_assoc_create",
+      "parentId": "fld_associacoes",
+      "url": "http://localhost:3000/produtoFornecedors",
+      "name": "Associar Produto a Fornecedor",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ProdutoId\": 1,\n  \"FornecedorId\": 1\n}"
+      },
+      "_type": "request"
+    },
+    {
+      "_id": "req_assoc_list_prod",
+      "parentId": "fld_associacoes",
+      "url": "http://localhost:3000/fornecedors/1/produtos",
+      "name": "Listar Produtos de um Fornecedor",
+      "method": "GET",
+      "_type": "request"
+    },
+    {
+      "_id": "req_assoc_list_forn",
+      "parentId": "fld_associacoes",
+      "url": "http://localhost:3000/produtos/1/fornecedors",
+      "name": "Listar Fornecedores de um Produto",
+      "method": "GET",
+      "_type": "request"
+    },
+    {
+      "_id": "req_assoc_delete",
+      "parentId": "fld_associacoes",
+      "url": "http://localhost:3000/produtoFornecedors",
+      "name": "Desassociar Produto de Fornecedor",
+      "method": "DELETE",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ProdutoId\": 1,\n  \"FornecedorId\": 1\n}"
+      },
+      "_type": "request"
+    }
+  ]
+}
