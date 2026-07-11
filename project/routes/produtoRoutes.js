@@ -11,4 +11,8 @@ router.put("/:id", produtoController.atualizar);
 
 router.delete("/:id", produtoController.excluir);
 
+router.get("/preco", produtoController.buscarPorPreco);
+
+router.get("/total", produtoController.totalProdutos);
+
 module.exports = router;

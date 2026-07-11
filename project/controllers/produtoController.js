@@ -1,4 +1,5 @@
 const { Produto } = require("../models");
+const { Op } = require("sequelize");
 
 module.exports = {
 
@@ -84,6 +85,35 @@ module.exports = {
 
         }
 
-    }
+    },
+
+    async buscarPorPreco(req,res){
+
+    const {min,max} = req.query;
+
+    const produtos = await Produto.findAll({
+        where:{
+            preco:{
+                [Op.between]:[
+                    min,
+                    max
+                ]
+            }
+        }
+    });
+
+    res.json(produtos);
+},
+
+
+async totalProdutos(req,res){
+
+    const total = await Produto.count();
+
+    res.json({
+        totalProdutos: total
+    });
+
+},
 
 };
